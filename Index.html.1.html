@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Employment Insights – Jordan</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #1f2937;
+    }
+
+    p {
+      text-align: center;
+      color: #555;
+      font-size: 14px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    select, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    button {
+      margin-top: 20px;
+      background: #2563eb;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #1d4ed8;
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #777;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Employment Insights – Jordan</h1>
+
+    <p>
+      This platform collects <strong>anonymous</strong> data to help understand
+      unemployment by major in Jordan.
+    </p>
+
+    <form id="employmentForm">
+
+      <label for="major">Major *</label>
+      <select id="major" required>
+        <option value="">Select your major</option>
+        <option>Computer Science</option>
+        <option>Information Technology</option>
+        <option>Engineering</option>
+        <option>Business Administration</option>
+        <option>Accounting</option>
+        <option>Education</option>
+        <option>Medicine</option>
+        <option>Pharmacy</option>
+        <option>Law</option>
+        <option>Other</option>
+      </select>
+
+      <label for="degree">Degree Level *</label>
+      <select id="degree" required>
+        <option value="">Select degree</option>
+        <option>Diploma</option>
+        <option>Bachelor</option>
+        <option>Master</option>
+        <option>PhD</option>
+      </select>
+
+      <label for="status">Employment Status *</label>
+      <select id="status" required>
+        <option value="">Select status</option>
+        <option>Unemployed</option>
+        <option>Employed (Related to Major)</option>
+        <option>Employed (Not Related to Major)</option>
+      </select>
+
+      <label for="city">City *</label>
+      <select id="city" required>
+        <option value="">Select city</option>
+        <option>Amman</option>
+        <option>Irbid</option>
+        <option>Zarqa</option>
+        <option>Aqaba</option>
+        <option>Salt</option>
+        <option>Karak</option>
+        <option>Ma'an</option>
+        <option>Other</option>
+      </select>
+
+      <button type="submit">Submit (Anonymous)</button>
+    </form>
+
+    <div class="footer">
+      No names, emails, or phone numbers are collected.
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("employmentForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      alert("Thank you! Your anonymous response has been recorded (locally for now).");
+
+      // Later: send this data to Firebase / backend
+      this.reset();
+    });
+  </script>
+</body>
+</html>
